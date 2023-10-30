@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Karigusan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="sample">\n\n
+In the grand halls of Elsinore Castle, a shadowy specter appeared. It was the ghost of King Hamlet, the former ruler of Denmark, beckoning for his son, Prince Hamlet. The apparition revealed a haunting secret - his death was no accident but a murder most foul.
+\n\n
+Prince Hamlet, tormented by grief and betrayal, swore to avenge his fathers murder. He would feign madness, setting the stage for a chilling tale of deceit and treachery.
+\n\n
+As the courtiers of the castle watched, Hamlets eccentric behavior became a cause for concern. He questioned the motives of those around him, including his mother, Queen Gertrude, and her new husband, King Claudius, the murderer.
+\n\n
+Hamlets quest for justice unraveled a web of political intrigue and personal vendettas. He devised a plan to expose Claudius guilt through a play within a play, "The Mousetrap."
+\n\n
+The performance of "The Mousetrap" exposed Claudius guilt, sending shockwaves through the court. In the ensuing chaos, Hamlet confronted his mother, Gertrude, and unleashed a torrent of pent-up emotions.
+\n\n
+The tragic climax of "Hamlet" unfolded in the final act, where the fates of Hamlet, Ophelia, Laertes, and Claudius intertwined in a fatal dance of swords, poison, and madness.
+\n\n
+In the end, the castles halls were filled with death and despair. Hamlets quest for justice had come at a great cost, leaving only the silence of the dead.
+\n\n
+As the curtain fell on this tale of revenge and tragedy, one question lingered in the minds of those who witnessed it: "To be or not to be?" The legacy of "Hamlet" would endure as a timeless exploration of the human condition.
+</string>
+
+</resources>
