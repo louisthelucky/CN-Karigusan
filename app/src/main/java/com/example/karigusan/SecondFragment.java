@@ -29,15 +29,7 @@ public class SecondFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment second_fragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static SecondFragment newInstance(int imageResId, String text) {
         SecondFragment fragment = new SecondFragment();
         Bundle args = new Bundle();
@@ -77,8 +69,26 @@ public class SecondFragment extends Fragment {
                 textView.setText(getResources().getString(R.string.cabana_desc));
             } else if (text == "ZOILO’s SEASIDE PRIVATE RESORT") {
                 textView.setText(getResources().getString(R.string.zoilo_desc));
-            } else if (text == "Vieness Beach Fron") {
+            } else if (text == "Vieness Beach Fron Resort") {
                 textView.setText(getResources().getString(R.string.vieness_desc));
+            } else if (text == "Don Mariano Beach House Resort") {
+                textView.setText(getResources().getString(R.string.donmariano_desc));
+            } else if (text ==  "Pambuhan Glamping") {
+                textView.setText(getResources().getString(R.string.pambuhan_desc));
+            } else if (text == "Palms Farm Resort") {
+                textView.setText(getResources().getString(R.string.palms_desc));
+            } else if (text ==  "Casanayon Resort") {
+                textView.setText(getResources().getString(R.string.casanayon_desc));
+            } else if (text == "Dome Place") {
+                textView.setText(getResources().getString(R.string.domeplace_desc));
+            } else if (text == "Maria Fatima Farm Resort") {
+                textView.setText(getResources().getString(R.string.maria_desc));
+            } else if (text == "Gardenn's Garden") {
+                textView.setText(getResources().getString(R.string.garden_desc));
+            } else if (text == "Pook Mirasol") {
+                textView.setText(getResources().getString(R.string.pook_desc));
+            } else if (text == "Zam’s Garden Resort") {
+                textView.setText(getResources().getString(R.string.zams_desc));
             }
 
 

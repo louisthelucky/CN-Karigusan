@@ -25,7 +25,16 @@ public class ListImage extends Fragment {
             "Rala",
             "Cabana Beach Bar and Resort",
             "ZOILO’s SEASIDE PRIVATE RESORT",
-            "Vieness Beach Fron"
+            "Vieness Beach Fron Resort",
+            "Don Mariano Beach House Resort",
+            "Pambuhan Glamping",
+            "Palms Farm Resort",
+            "Casanayon Resort",
+            "Dome Place",
+            "Maria Fatima Farm Resort",
+            "Gardenn's Garden",
+            "Pook Mirasol",
+            "Zam’s Garden Resort"
     };
 
     private static final int[] resortImages = {
@@ -39,7 +48,16 @@ public class ListImage extends Fragment {
             R.drawable.rala,
             R.drawable.cabana2,
             R.drawable.zoilos2,
-            R.drawable.vieness
+            R.drawable.vieness,
+            R.drawable.donmariano3,
+            R.drawable.pambuhan2,
+            R.drawable.palms2,
+            R.drawable.casanayon,
+            R.drawable.domeplace2,
+            R.drawable.maria2,
+            R.drawable.garden2,
+            R.drawable.pook3,
+            R.drawable.zams2
     };
 
 
