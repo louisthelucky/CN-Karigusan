@@ -89,6 +89,28 @@ public class SecondFragment extends Fragment {
                 textView.setText(getResources().getString(R.string.pook_desc));
             } else if (text == "Zam’s Garden Resort") {
                 textView.setText(getResources().getString(R.string.zams_desc));
+            } else if (text == "Selfie Beach Resort") {
+                textView.setText(getResources().getString(R.string.selfie_desc));
+            } else if (text == "Greenland Resort") {
+                textView.setText(getResources().getString(R.string.greenland_desc));
+            } else if (text == "Candelaria Resort") {
+                textView.setText(getResources().getString(R.string.candelaria_desc));
+            } else if (text == "Gumaus Bay Resort") {
+                textView.setText(getResources().getString(R.string.gumaus_desc));
+            } else if (text == "Mambulao Pacific Resort") {
+                textView.setText(getResources().getString(R.string.mambulao_desc));
+            } else if (text == "Altheas Dreamland’s Resort") {
+                textView.setText(getResources().getString(R.string.althea_desc));
+            } else if (text == "Club noah Eco- Resort") {
+                textView.setText(getResources().getString(R.string.noah_desc));
+            } else if (text == "D’ GARDEN AGRI RESORT") {
+                textView.setText(getResources().getString(R.string.agri_desc));
+            } else if (text == "The Jars Hotel and Resort") {
+                textView.setText(getResources().getString(R.string.jars_desc));
+            } else if (text == "Calaguas Paradise Resort") {
+                textView.setText(getResources().getString(R.string.calaguas_desc));
+            } else if (text == "Mananap Falls") {
+                textView.setText(getResources().getString(R.string.mananap_desc));
             }
 
 

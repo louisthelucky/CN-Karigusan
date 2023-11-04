@@ -28,7 +28,7 @@
                 android:layout_margin="15dp"
                 android:background="@drawable/corner"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img"
+                android:src="@drawable/greenland2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

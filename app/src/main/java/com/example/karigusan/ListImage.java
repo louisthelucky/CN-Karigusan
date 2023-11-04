@@ -15,14 +15,6 @@ import androidx.fragment.app.FragmentTransaction;
 public class ListImage extends Fragment {
 
     private static final String[] imageNames = {
-            "Altheas",
-            "Bagasbas",
-            "Calaguas",
-            "Greenland",
-            "Paradisoverde",
-            "Pineapple",
-            "Pulangdaga",
-            "Rala",
             "Cabana Beach Bar and Resort",
             "ZOILO’s SEASIDE PRIVATE RESORT",
             "Vieness Beach Fron Resort",
@@ -34,18 +26,21 @@ public class ListImage extends Fragment {
             "Maria Fatima Farm Resort",
             "Gardenn's Garden",
             "Pook Mirasol",
-            "Zam’s Garden Resort"
+            "Zam’s Garden Resort",
+            "Selfie Beach Resort",
+            "Greenland Resort",
+            "Candelaria Resort",
+            "Gumaus Bay Resort",
+            "Mambulao Pacific Resort",
+            "Altheas Dreamland’s Resort",
+            "Club noah Eco- Resort",
+            "D’ GARDEN AGRI RESORT",
+            "The Jars Hotel and Resort",
+            "Calaguas Paradise Resort",
+            "Mananap Falls"
     };
 
     private static final int[] resortImages = {
-            R.drawable.altheas,
-            R.drawable.bagasbas,
-            R.drawable.calaguas,
-            R.drawable.greenland,
-            R.drawable.paradisoverde,
-            R.drawable.pineapple,
-            R.drawable.pulangdaga,
-            R.drawable.rala,
             R.drawable.cabana2,
             R.drawable.zoilos2,
             R.drawable.vieness,
@@ -57,7 +52,18 @@ public class ListImage extends Fragment {
             R.drawable.maria2,
             R.drawable.garden2,
             R.drawable.pook3,
-            R.drawable.zams2
+            R.drawable.zams2,
+            R.drawable.selfie3,
+            R.drawable.greenland,
+            R.drawable.candelaria2,
+            R.drawable.gumaus,
+            R.drawable.mambulao2,
+            R.drawable.althea2,
+            R.drawable.noah,
+            R.drawable.agri,
+            R.drawable.jars,
+            R.drawable.calaguas2,
+            R.drawable.mananap
     };
 
 

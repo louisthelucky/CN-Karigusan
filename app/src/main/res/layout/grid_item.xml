@@ -4,24 +4,23 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:orientation="vertical"
-    android:padding="5dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp">
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="20dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/grid_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/corner"
                 android:scaleType="centerCrop" />
 
@@ -29,16 +28,18 @@
                 android:id="@+id/image_name_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_gravity="center"
                 android:background="@color/green"
                 android:gravity="center"
+                android:padding="3dp"
                 android:text="Image Name"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
