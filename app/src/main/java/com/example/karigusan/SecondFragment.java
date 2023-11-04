@@ -1,12 +1,13 @@
 package com.example.karigusan;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,11 +38,11 @@ public class SecondFragment extends Fragment {
      * @return A new instance of fragment second_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SecondFragment newInstance(String param1, String param2) {
+    public static SecondFragment newInstance(int imageResId, String text) {
         SecondFragment fragment = new SecondFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putInt("imageResId", imageResId);
+        args.putString("text", text);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,9 +57,33 @@ public class SecondFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_second_fragment, container, false);
+
+        ImageView imageView = view.findViewById(R.id.imageView);
+        TextView textView = view.findViewById(R.id.textView);
+        TextView title = view.findViewById(R.id.image_title);
+
+
+
+        Bundle args = getArguments();
+        if (args != null) {
+            int imageResId = args.getInt("imageResId");
+            String text = args.getString("text");
+            imageView.setImageResource(imageResId);
+            title.setText(text);
+
+            if (text == "Cabana Beach Bar and Resort") {
+                textView.setText(getResources().getString(R.string.cabana_desc));
+            } else if (text == "ZOILO’s SEASIDE PRIVATE RESORT") {
+                textView.setText(getResources().getString(R.string.zoilo_desc));
+            } else if (text == "Vieness Beach Fron") {
+                textView.setText(getResources().getString(R.string.vieness_desc));
+            }
+
+
+        }
+
+        return view;
     }
 }
