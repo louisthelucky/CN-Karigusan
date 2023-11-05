@@ -19,15 +19,15 @@
     <TextView
         android:id="@+id/oval"
         android:layout_width="0dp"
-        android:layout_height="133dp"
+        android:layout_height="40dp"
         android:background="@drawable/oval2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/resort_title"
+        android:id="@+id/title_app"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -44,26 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
-    <EditText
-        android:id="@+id/searchbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/oval1"
-        android:drawableRight="@drawable/search"
-        android:ems="10"
-        android:hint="Search"
-        android:inputType="text"
-        android:padding="20dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/oval" />
-
     <ImageView
         android:id="@+id/back"
         android:layout_width="50dp"
@@ -72,9 +52,9 @@
         android:background="@drawable/back_button"
         android:onClick="back"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/resort_title"
-        app:layout_constraintStart_toStartOf="@+id/resort_title"
-        app:layout_constraintTop_toTopOf="@+id/resort_title" />
+        app:layout_constraintBottom_toBottomOf="@+id/title_app"
+        app:layout_constraintStart_toStartOf="@+id/title_app"
+        app:layout_constraintTop_toTopOf="@+id/title_app" />
 
     <ImageView
         android:id="@+id/button3"
@@ -83,9 +63,9 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/menu"
         android:onClick="showMenu"
-        app:layout_constraintBottom_toBottomOf="@+id/resort_title"
-        app:layout_constraintEnd_toEndOf="@+id/resort_title"
-        app:layout_constraintTop_toTopOf="@+id/resort_title" />
+        app:layout_constraintBottom_toBottomOf="@+id/title_app"
+        app:layout_constraintEnd_toEndOf="@+id/title_app"
+        app:layout_constraintTop_toTopOf="@+id/title_app" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
@@ -109,16 +89,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/oval"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/heart"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/fav_button"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

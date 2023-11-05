@@ -1,12 +1,8 @@
 package com.example.karigusan;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -16,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     ImageView backButton;
@@ -23,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     private TextView textView;
     private ImageView go;
     private ImageView heart;
+    private DBHelper dbHelper;
 
 
     @Override
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         setContentView(R.layout.activity_main);
         backButton = findViewById(R.id.back);
-        title = findViewById(R.id.resort_title);
+        title = findViewById(R.id.title_app);
 
     }
 
@@ -49,13 +48,21 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             Toast.makeText(this, "Choose about", Toast.LENGTH_SHORT).show();
             return true;
         } else if (item.getItemId() == R.id.fav) {
-            Toast.makeText(this, "Choose Favorite", Toast.LENGTH_SHORT).show();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            Favorites fragment = new Favorites(); // Replace with your actual fragment class
-            fragmentTransaction.replace(R.id.fragmentContainerView2, fragment); // Replace R.id.fragment_container with your actual container ID
-            fragmentTransaction.addToBackStack(null); // Add the transaction to the back stack
-            fragmentTransaction.commit();
+
+            dbHelper = new DBHelper(this); // Replace 'this' with the appropriate context if necessary
+            List<String> savedFavorites = dbHelper.getAllFavoriteResorts();
+
+            if (savedFavorites.isEmpty()) {
+                Toast.makeText(this, "No favorites yet!", Toast.LENGTH_SHORT).show();
+            } else {
+                title.setText("FAVORITE");
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                Favorites fragment = new Favorites(); // Replace with your actual fragment class
+                fragmentTransaction.replace(R.id.fragmentContainerView2, fragment); // Replace R.id.fragment_container with your actual container ID
+                fragmentTransaction.addToBackStack(null); // Add the transaction to the back stack
+                fragmentTransaction.commit();
+            }
             return true;
         } else {
             return false;
@@ -63,15 +70,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     }
 
-
-    public void locate(View view) {
-        Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/dir/?api=1&origin=&destination=Bagasbas+Daet");
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-
-            startActivity(mapIntent);
-
-    }
 
     public void back(View view) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -82,28 +80,13 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             Toast.makeText(this, "Already in Home Screen", Toast.LENGTH_SHORT).show();
         }
 
-        // Set the original height for the TextView
-        TextView textView = findViewById(R.id.oval); // Make sure to use the correct ID for the TextView
-        int originalHeight = getResources().getDimensionPixelSize(R.dimen.original_height); // Replace with the actual dimension resource ID
-
-        ViewGroup.LayoutParams params = textView.getLayoutParams();
-        params.height = originalHeight;
-        textView.setLayoutParams(params);
 
         go = findViewById(R.id.gobutton);
         go.setVisibility(View.INVISIBLE);
-        heart = findViewById(R.id.heart);
-        heart.setVisibility(View.INVISIBLE);
 
-        // Show the search bar
-        EditText search = findViewById(R.id.searchbar); // Make sure to use the correct ID for the EditText
-        search.setVisibility(View.VISIBLE);
+        title.setText("CN - KARIGUSAN");
     }
 
-
-    public void favbutton(View view) {
-        Toast.makeText(this, "Add to Favorites", Toast.LENGTH_SHORT).show();
-    }
 
 
     @Override
@@ -117,26 +100,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             super.onBackPressed();
         }
 
-        // Reset the TextView height
-        TextView textView = findViewById(R.id.oval); // Replace with the actual ID of the TextView
-        if (textView != null) {
-            int originalHeight = getResources().getDimensionPixelSize(R.dimen.original_height); // Replace with the actual dimension resource ID
-
-            ViewGroup.LayoutParams params = textView.getLayoutParams();
-            params.height = originalHeight;
-            textView.setLayoutParams(params);
-        }
 
         go = findViewById(R.id.gobutton);
         go.setVisibility(View.INVISIBLE);
-        heart = findViewById(R.id.heart);
-        heart.setVisibility(View.INVISIBLE);
-
-        // Show the search bar
-        EditText search = findViewById(R.id.searchbar); // Replace with the actual ID of the EditText
-        if (search != null) {
-            search.setVisibility(View.VISIBLE);
-        }
+        title.setText("CN - KARIGUSAN");
     }
 
 

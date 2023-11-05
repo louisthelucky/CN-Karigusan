@@ -100,19 +100,9 @@ public class ListImage extends Fragment {
 
     private void openSecondFragment(String text) {
 
-        search = getActivity().findViewById(R.id.searchbar);
-        search.setVisibility(View.INVISIBLE);
-
-        textView = getActivity().findViewById(R.id.oval);
-        ViewGroup.LayoutParams params = textView.getLayoutParams();
-        params.height = 120;
-        textView.setLayoutParams(params);
 
         go = getActivity().findViewById(R.id.gobutton);
         go.setVisibility(View.VISIBLE);
-        heart = getActivity().findViewById(R.id.heart);
-        heart.setVisibility(View.VISIBLE);
-
 
         Fragment secondFragment = SecondFragment.newInstance(text); // Adjust the method call in accordance with the modified constructor
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
