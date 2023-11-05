@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -66,11 +68,18 @@ public class ListImage extends Fragment {
             R.drawable.mananap
     };
 
+    private EditText search;
+    private TextView textView;
+    private ImageView go;
+    private ImageView heart;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_image, container, false);
+
+
 
         GridView gridView = view.findViewById(R.id.gridView);
         GridAdapter gridViewAdapter = new GridAdapter(requireContext(), resortImages, imageNames);
@@ -79,11 +88,9 @@ public class ListImage extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(requireContext(), "You Clicked on " + imageNames[position], Toast.LENGTH_SHORT).show();
-                int imageResId = resortImages[position];
                 String text = imageNames[position];
 
-                openSecondFragment(imageResId, text);
+                openSecondFragment(text);
 
             }
         });
@@ -91,13 +98,28 @@ public class ListImage extends Fragment {
         return view;
     }
 
-    private void openSecondFragment(int imageResId, String text) {
-        Fragment secondFragment = SecondFragment.newInstance(imageResId, text);
+    private void openSecondFragment(String text) {
+
+        search = getActivity().findViewById(R.id.searchbar);
+        search.setVisibility(View.INVISIBLE);
+
+        textView = getActivity().findViewById(R.id.oval);
+        ViewGroup.LayoutParams params = textView.getLayoutParams();
+        params.height = 120;
+        textView.setLayoutParams(params);
+
+        go = getActivity().findViewById(R.id.gobutton);
+        go.setVisibility(View.VISIBLE);
+        heart = getActivity().findViewById(R.id.heart);
+        heart.setVisibility(View.VISIBLE);
+
+
+        Fragment secondFragment = SecondFragment.newInstance(text); // Adjust the method call in accordance with the modified constructor
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragmentContainerView2, secondFragment); // Replace fragment_container with your actual container ID
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-
     }
+
 }

@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -18,7 +20,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     ImageView backButton;
     TextView title;
-
+    private TextView textView;
+    private ImageView go;
+    private ImageView heart;
 
 
     @Override
@@ -77,12 +81,63 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         } else {
             Toast.makeText(this, "Already in Home Screen", Toast.LENGTH_SHORT).show();
         }
+
+        // Set the original height for the TextView
+        TextView textView = findViewById(R.id.oval); // Make sure to use the correct ID for the TextView
+        int originalHeight = getResources().getDimensionPixelSize(R.dimen.original_height); // Replace with the actual dimension resource ID
+
+        ViewGroup.LayoutParams params = textView.getLayoutParams();
+        params.height = originalHeight;
+        textView.setLayoutParams(params);
+
+        go = findViewById(R.id.gobutton);
+        go.setVisibility(View.INVISIBLE);
+        heart = findViewById(R.id.heart);
+        heart.setVisibility(View.INVISIBLE);
+
+        // Show the search bar
+        EditText search = findViewById(R.id.searchbar); // Make sure to use the correct ID for the EditText
+        search.setVisibility(View.VISIBLE);
     }
+
 
     public void favbutton(View view) {
         Toast.makeText(this, "Add to Favorites", Toast.LENGTH_SHORT).show();
     }
 
+
+    @Override
+    public void onBackPressed() {
+        // Check if the fragment manager has any fragments in the back stack
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            // If there are fragments in the back stack, pop the back stack
+            getSupportFragmentManager().popBackStack();
+        } else {
+            // If there are no fragments in the back stack, perform the default back button behavior
+            super.onBackPressed();
+        }
+
+        // Reset the TextView height
+        TextView textView = findViewById(R.id.oval); // Replace with the actual ID of the TextView
+        if (textView != null) {
+            int originalHeight = getResources().getDimensionPixelSize(R.dimen.original_height); // Replace with the actual dimension resource ID
+
+            ViewGroup.LayoutParams params = textView.getLayoutParams();
+            params.height = originalHeight;
+            textView.setLayoutParams(params);
+        }
+
+        go = findViewById(R.id.gobutton);
+        go.setVisibility(View.INVISIBLE);
+        heart = findViewById(R.id.heart);
+        heart.setVisibility(View.INVISIBLE);
+
+        // Show the search bar
+        EditText search = findViewById(R.id.searchbar); // Replace with the actual ID of the EditText
+        if (search != null) {
+            search.setVisibility(View.VISIBLE);
+        }
+    }
 
 
 
